@@ -14,7 +14,8 @@
 </head>
 
 <body>
-    <!--Header and Menu Section-->
+    <section id="mainContent-area">
+        <!--Header and Menu Section-->
     <header class="container">
         <nav>
             <ul>
@@ -25,10 +26,10 @@
             </ul>
         </nav>
     </header>
-
+  
     <!--Booking Section-->
-    <main class="main-content container">
-        <div class="booking-form">
+    <main   class="main-content container">
+        <div id="form-area" class="booking-form">
             <h3>Booking Flights</h3>
             <div class="input-group">
                 <label for="">Flying From</label>
@@ -95,16 +96,22 @@
                     </div>
                 </div>
             </div>
-            <button class="btn-style">Book Now</button>
+            <button id="booking-area" class="btn-style">Book Now</button>
         </div>
-
+        
         <div class="booking-content">
             <h1>discover <br> around the world</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicingelit. Provident voluptatibus quam fuga laborumalias veniam libero autem quasi maxime ullam vero nama imi dolor, architecto ab facilis eaque deserunt nobise voluptatibus quam</p>
         </div>
     </section>
-
+    <section id="confirmation-area"  >
+        <p>✔️</p>
+        <h2 class="greetings">Congratulations !</h2>
+        <h1> Your Booking id Successfully Completed.</h1>
+        <h4>Wish You a Very Happy Journey 🙏 🙏 </h4>
+    </section>   
     <!--Thank You-->
+    
     <script> 
         function handleTicketChange (ticket, isChange) {
             const ticketInput = document.getElementById(ticket + '-count');
@@ -124,9 +131,9 @@
              if (ticket == 'economyclass') {
                 ticketTotal =ticketNewCount * 100;
              }
-            document.getElementById( ticket + '-total').innerText =ticketTotal;
+            // document.getElementById( ticket + '-total').innerText =ticketTotal;
             totalCalculator( );
-        }
+        };
 
         function totalCalculator( ) {
             const firstclassCount =  getInputValue('firstclass');  
@@ -137,14 +144,21 @@
             document.getElementById('tax-amount').innerText = tax ;
             const totalPrice = subTotal + tax ;
             document.getElementById('total-price').innerText = totalPrice ;
-        }
+        };
         
         function getInputValue(ticket) {
             const ticketInput = document.getElementById(ticket + '-count');
             const ticketCount = parseInt(ticketInput.value);
             return ticketCount;
-        }
+        };
 
+        const bookingButton = document.getElementById('booking-area');
+        bookingButton.addEventListener('click', function(){
+            const mainContentArea = document.getElementById("mainContent-area");
+            mainContentArea.style.display = "none";
+            const confirmationArea = document.getElementById('confirmation-area');
+            confirmationArea.style.display = "block";
+        });
     </script>
 </body>
 

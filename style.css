@@ -5,7 +5,7 @@
     text-decoration: none;
     list-style-type: none;
 }
-body{
+#mainContent-area{
     font-family: 'Roboto', sans-serif;
     background:url("images/bg.png");
     background-repeat: no-repeat;
@@ -122,3 +122,36 @@ nav ul li a:hover, a.active{
     display: flex;
     justify-content: space-between;
 }
+#confirmation-area{
+    /* background-color: darkgrey; */
+    display: none;
+    margin-top: 200px;
+    line-height: 40px;
+    padding: 41px 0;
+    width: 60%;
+    margin: 100px auto;
+    border-radius: 10px;
+    box-shadow: 5px 5px 20px dimgray;
+    
+}
+#confirmation-area h1{
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+     text-align: center;
+     color: slateblue;
+}
+#confirmation-area h4{
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    color: teal;
+}
+#confirmation-area p{
+    text-align: center;
+    font-size: 50px;
+}
+.greetings{
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    color: darkgreen;
+}
+
